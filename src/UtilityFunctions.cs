@@ -200,7 +200,7 @@ static class UtilityFunctions
 			}
 
 			if (!small) {
-				SwinGame.DrawBitmap(GameImage[shipName], colLeft, rowTop);
+				SwinGame.DrawBitmap(GameImage(shipName), colLeft, rowTop);
 			} else {
 				SwinGame.FillRectangle(SHIP_FILL_COLOR, colLeft, rowTop, shipWidth, shipHeight);
 				SwinGame.DrawRectangle(SHIP_OUTLINE_COLOR, colLeft, rowTop, shipWidth, shipHeight);

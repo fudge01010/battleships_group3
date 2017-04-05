@@ -43,7 +43,7 @@ static class EndingGameController
 	/// </summary>
 	public static void HandleEndOfGameInput()
 	{
-		if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_return) || SwinGame.KeyTyped(KeyCode.vk_escape)) {
+		if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_RETURN) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE)) {
 			ReadHighScore(HumanPlayer.Score);
 			EndCurrentState();
 		}
