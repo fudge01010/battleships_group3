@@ -6,6 +6,15 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using SwinGameSDK;
 using static SwinGameSDK.SwinGame;
+using static SwinGameSDK.SwinGame;
+using static GameController;
+using static GameResources;
+using static DeploymentController;
+using static DiscoveryController;
+using static EndingGameController;
+using static MenuController;
+using static HighScoreController;
+
 
 static class GameLogic
 {
