@@ -3,8 +3,10 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data;
 using System.Diagnostics;
+using SwinGameSDK;
+using static SwinGameSDK.SwinGame;
+
 /// <summary>
 /// This includes a number of utility methods for
 /// drawing and interacting with the Mouse.
@@ -134,10 +136,6 @@ static class UtilityFunctions
 				draw = true;
 
 				switch (grid.Item(row, col)) {
-					case TileView.Ship:
-						draw = false;
-						break;
-					//If small Then fillColor = _SMALL_SHIP Else fillColor = _LARGE_SHIP
 					case TileView.Miss:
 						if (small)
 							fillColor = SMALL_MISS;
@@ -195,7 +193,7 @@ static class UtilityFunctions
 			}
 
 			if (!small) {
-				SwinGame.DrawBitmap(GameImage(shipName), colLeft, rowTop);
+				SwinGame.DrawBitmap(GameImage[shipName], colLeft, rowTop);
 			} else {
 				SwinGame.FillRectangle(SHIP_FILL_COLOR, colLeft, rowTop, shipWidth, shipHeight);
 				SwinGame.DrawRectangle(SHIP_OUTLINE_COLOR, colLeft, rowTop, shipWidth, shipHeight);
