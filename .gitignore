@@ -2,3 +2,6 @@
 
 # Log files:
 out.log
+
+# BIN output directory:
+bin/
