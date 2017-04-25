@@ -161,11 +161,11 @@ static class HighScoreController
 	}
 
 	/// <summary>
-	/// Read the user's name for their highsSwinGame.
+	/// Read the user's name for their high score.
 	/// </summary>
 	/// <param name="value">the player's sSwinGame.</param>
 	/// <remarks>
-	/// This verifies if the score is a highsSwinGame.
+	/// This verifies if the score is a high score.
 	/// </remarks>
 	public static void ReadHighScore(int value)
 	{
@@ -206,14 +206,8 @@ static class HighScoreController
 			_Scores.Add(s);
 			_Scores.Sort();
 
+			SaveScores ();
 			EndCurrentState();
 		}
 	}
 }
-
-//=======================================================
-//Service provided by Telerik (www.telerik.com)
-//Conversion powered by NRefactory.
-//Twitter: @telerik
-//Facebook: facebook.com/telerik
-//=======================================================
