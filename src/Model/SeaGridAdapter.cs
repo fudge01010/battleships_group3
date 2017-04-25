@@ -1,8 +1,9 @@
 
-using Microsoft.VisualBasic;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
+// 
 using System.Diagnostics;
 using SwinGameSDK;
 
@@ -47,7 +48,7 @@ public class SeaGridAdapter : ISeaGrid
 	/// <returns>a tile, either what it actually is, or if it was a ship then return a sea tile</returns>
 	public TileView this[int x, int y] {
 		get {
-			TileView result = _MyGrid.Item(x, y);
+			TileView result = _MyGrid[x, y];
 
 			if (result == TileView.Ship) {
 				return TileView.Sea;
