@@ -20,6 +20,12 @@ public class AIEasyPlayer : AIPlayer
 		row = _Random.Next(0, EnemyGrid.Height);
 		column = _Random.Next(0, EnemyGrid.Width);
 	}
+
+	protected override void ProcessShot(int row, int col, AttackResult result)
+	{
+		if (result.Value == ResultOfAttack.Hit)
+			GenerateCoords ();
+	}
 }
 
 
