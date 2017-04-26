@@ -106,6 +106,7 @@ static class DeploymentController
 		//Calculate the row/col clicked
 		int row = 0;
 		int col = 0;
+		//added - field_top, fixed the mouse positioning
 		row = Convert.ToInt32(Math.Floor((mouse.Y - FIELD_TOP) / (CELL_HEIGHT + CELL_GAP)));
 		col = Convert.ToInt32(Math.Floor((mouse.X - FIELD_LEFT) / (CELL_WIDTH + CELL_GAP)));
 
