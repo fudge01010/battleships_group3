@@ -79,9 +79,13 @@ public static class GameController
 
 		//Create the game
 		_theGame = new BattleShipsGame();
-
+		//edited here ---- not sure if this is the solution ----
+		// --------------- added case for easy and changed default to easy
 		//create the players
 		switch (_aiSetting) {
+			case AIOption.Easy:
+				_ai = new AIEasyPlayer (_theGame);
+				break;
 			case AIOption.Medium:
 				_ai = new AIMediumPlayer(_theGame);
 				break;
@@ -89,7 +93,7 @@ public static class GameController
 				_ai = new AIHardPlayer(_theGame);
 				break;
 			default:
-				_ai = new AIHardPlayer(_theGame);
+				_ai = new AIEasyPlayer(_theGame);
 				break;
 		}
 
