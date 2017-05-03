@@ -1,5 +1,4 @@
 ﻿
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ public class AIEasyPlayer : AIPlayer
 	{
 	}
 
-	private Location _nextLocation = new Location();
+	private Location _nextLocation = null;
 
 	/// <summary>
 	/// generate shots at random
@@ -19,16 +18,10 @@ public class AIEasyPlayer : AIPlayer
 	/// param - column = column it generates
 	protected override void GenerateCoords(ref int row, ref int column)
 	{
-		do {
-			if (_nextLocation != null) {
-				row = _nextLocation.Row;
-				column = _nextLocation.Column;
-				_nextLocation = null;
-			} else {
-				row = Player._Random.Next (0, EnemyGrid.Height);
-				column = _Random.Next (0, EnemyGrid.Width);
-			}
-		} while (EnemyGrid[row, column] != TileView.Sea);
+		do
+		{
+			SearchCoords(ref row, ref column);
+		} while ((row < 0 || column < 0 || row >= EnemyGrid.Height || column >= EnemyGrid.Width || EnemyGrid[row, column] != TileView.Sea));
 
 	}
 	/// <summary>
@@ -68,5 +61,12 @@ public class AIEasyPlayer : AIPlayer
 				_nextLocation.Column = PlayerGrid.Width - 1;
 			}
 		}
+	}
+
+	private void SearchCoords(ref int row, ref int col)
+	{
+		row = _Random.Next(0, EnemyGrid.Height);
+		col = _Random.Next(0, EnemyGrid.Width);
+
 	}
 }
