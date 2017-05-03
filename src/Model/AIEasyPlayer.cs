@@ -11,7 +11,7 @@ public class AIEasyPlayer : AIPlayer
 	{
 	}
 
-	private Location _nextLocation;
+	private Location _nextLocation = new Location();
 
 	/// <summary>
 	/// generate shots at random
