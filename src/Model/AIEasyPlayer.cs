@@ -28,7 +28,7 @@ public class AIEasyPlayer : AIPlayer
 				row = Player._Random.Next (0, EnemyGrid.Height);
 				column = _Random.Next (0, EnemyGrid.Width);
 			}
-		} while (EnemyGrid.Item (row, column) != TileView.Sea);
+		} while (EnemyGrid[row, column] != TileView.Sea);
 
 	}
 	/// <summary>
