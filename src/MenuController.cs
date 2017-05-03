@@ -33,7 +33,9 @@ static class MenuController
 			"PLAY",
 			"SETUP",
 			"SCORES",
-			"QUIT"
+			"QUIT",
+			"MUTE",
+			"UNMUTE"
 		},
 		new string[] {
 			"RETURN",
@@ -71,6 +73,9 @@ static class MenuController
 	private const int SETUP_MENU_EXIT_BUTTON = 3;
 	private const int GAME_MENU_RETURN_BUTTON = 0;
 	private const int GAME_MENU_SURRENDER_BUTTON = 1;
+
+	private const int MAIN_MENU_MUTE = 4;
+	private const int MAIN_MENU_UNMUTE = 5;
 
 	private const int GAME_MENU_QUIT_BUTTON = 2;
 	private static readonly Color MENU_COLOR = SwinGame.RGBAColor(2, 167, 252, 255);
@@ -279,6 +284,12 @@ static class MenuController
 				break;
 			case MAIN_MENU_QUIT_BUTTON:
 				EndCurrentState();
+				break;
+			case MAIN_MENU_MUTE:
+				SwinGame.StopMusic();
+				break;
+			case MAIN_MENU_UNMUTE:
+				SwinGame.PlayMusic(GameMusic("Background"));
 				break;
 		}
 	}
